@@ -1,56 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Post from "./Post";
+import Header from './Header';
+import {Route,Routes} from 'react-router-dom';
+import Layout from './Layout';
+import IndexPage from './pages/IndexPage';
+import LoginPage from './pages/LoginPage';
 
-function App() {
-  return (
-    <main>
-      <header>
-        <a href="" className="logo">MyBlog</a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-     <div className="post">
-       <div className="image">
-        <img src="https://tse1.mm.bing.net/th/id/OIP.qFKTKXW0Hmo8oXuvmTwvOwHaEH?rs=1&pid=ImgDetMain&o=7&rm=3" alt=""/>
-        </div>
-        <div className="texts">
-        <h2>Full-House backup coming later this year</h2>
-        <p className="info">
-          <a className="author">Dawid Paszko </a>
-          <time> 2023-01-06 16:45</time>
-        </p>
-        <p className="summary">Today at its special launch event, home backup power giant EcoFlow launched a flurry of new products, including a ‘Whole-home Backup Power Solution.’ </p>
-        </div>
-      </div>
-     <div className="post">
-       <div className="image">
-        <img src="https://tse1.mm.bing.net/th/id/OIP.qFKTKXW0Hmo8oXuvmTwvOwHaEH?rs=1&pid=ImgDetMain&o=7&rm=3" alt=""/>
-        </div>
-        <div className="texts">
-        <h2>Full-House backup coming later this year</h2>
-        <p className="info">
-          <a className="author">Dawid Paszko </a>
-          <time> 2023-01-06 16:45</time>
-        </p>
-        <p className="summary">Today at its special launch event, home backup power giant EcoFlow launched a flurry of new products, including a ‘Whole-home Backup Power Solution.’ </p>
-        </div>
-      </div>
-       <div className="post">
-       <div className="image">
-        <img src="https://tse1.mm.bing.net/th/id/OIP.qFKTKXW0Hmo8oXuvmTwvOwHaEH?rs=1&pid=ImgDetMain&o=7&rm=3" alt=""/>
-        </div>
-        <div className="texts">
-        <h2>Full-House backup coming later this year</h2>
-        <p className="info">
-          <a className="author">Dawid Paszko </a>
-          <time> 2023-01-06 16:45</time>
-        </p>
-        <p className="summary">Today at its special launch event, home backup power giant EcoFlow launched a flurry of new products, including a ‘Whole-home Backup Power Solution.’ </p>
-        </div>
-      </div>
-    </main>
+function App(){
+  return(
+    <Routes>
+      <Route path="/" element={<Layout />}>
+       <Route index element ={<IndexPage /> }/>
+       <Route path ={'/login'} element={<LoginPage />} />
+      </Route>
+    </Routes>
   );
 }
 
